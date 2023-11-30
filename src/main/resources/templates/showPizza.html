@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css} "/>
+</head>
+<body>
+	<div th:replace="frags::header"></div>
+	<div class="container">
+		<div class="row">
+			<div th:replace="frags::home" class="my-5"></div>
+			<div class="col-12 text-center my-5">
+				<h1>[[${pizza.name}]]</h1>
+				<img th:src="${pizza.photo}" alt="pizza img" class="my-5 w-75">
+				<p>[[${pizza.description}]]</p>
+				<span class="fw-bold">Prezzo: [[${pizza.price}]]€</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

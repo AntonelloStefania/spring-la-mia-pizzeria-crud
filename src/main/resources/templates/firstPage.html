@@ -7,20 +7,27 @@
 
 </head>
 <body>
+			
+	<div th:replace="frags::header"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-12 d-flex flex-wrap">
+				<div class="text-center col-12">
+					<h3 th:if="${pizze.isEmpty()}">Non ci sono pizze disponibili</h3>
+				</div>
 				<div class="card d-flex m-2" style="width: 18rem;"
-				 th:each="pizza : ${pizze}"
-				 >
-				  <img class="card-img-top "  height="200px" th:src="${pizza.photo}" alt="Card image cap">
-				  	<div class="card-body" >
-					    <h3 class="card-text" >[[${pizza.name}]]</h3>
-					    <p class="card-text">[[${pizza.description}]]</p>
-					    <div class="text-end">							
-					    <span >[[${pizza.price}]]€</span>
-						</div>
-			 	 	</div>
+					 th:each="pizza : ${pizze}"
+				 >			
+					<a th:href="@{/pizza/{id}(id=${pizza.id})}" class="text-decoration-none text-black">					
+					  <img class="card-img-top "  height="200px" th:src="${pizza.photo}" alt="Card image cap">
+					  	<div class="card-body" >
+						    <h3 class="card-text" >[[${pizza.name}]]</h3>
+						    <p class="card-text">[[${pizza.description}]]</p>
+						    <div class="text-end">							
+						    <span >[[${pizza.price}]]€</span>
+							</div>
+				 	 	</div>
+					</a>
 				</div>
 			</div>
 		</div>

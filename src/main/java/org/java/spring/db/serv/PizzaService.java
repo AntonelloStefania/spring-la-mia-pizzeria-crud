@@ -18,6 +18,10 @@ public class PizzaService {
 		return pizzaRepository.findAll();
 	}
 	
+	public Pizza findById(int id) {
+		return pizzaRepository.findById(id).get();
+	}
+	
 	public void save(Pizza pizza) {
 		pizzaRepository.save(pizza);
 	}
