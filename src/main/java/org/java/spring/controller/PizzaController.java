@@ -26,7 +26,7 @@ public class PizzaController {
 				: pizzaService.findByName(search);
 		
 		model.addAttribute("pizze", pizzas);
-		model.addAttribute("search", search == null? "" : search);
+		model.addAttribute("search", search == null ? "" : search);
 		
 		return "firstPage";
 	}
